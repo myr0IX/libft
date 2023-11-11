@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 09:59:44 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/10 14:03:55 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/11 13:23:49 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memset(void *s, int c, size_t n)
 		nbr++;
 	d = (int *) s;
 	i = 0;
-	while (i <= n)
+	while (i <= nbr)
 	{
 		d[i] = c;
 		i++;
