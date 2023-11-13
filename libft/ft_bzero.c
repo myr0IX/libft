@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:12:39 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/10 17:18:43 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:09:47 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	int	*d;
+	char	*d;
 
-	d = (int *) s;
+	d = (char *) s;
 	i = 0;
 	while (i < n)
 	{
@@ -29,14 +29,14 @@ void	ft_bzero(void *s, size_t n)
 #include <strings.h>
 int	main (void)
 {
-	void	*str1;
-	void	*str2;
+	int	*rft;
+	int	*str2;
 	size_t	n;
 
 	n = 5;
-	str1 = "qwertyuii";
-	str2 = str1;
-	bzero(str1, n);
+	rft = malloc(10 * sizeof(int));
+	str2 = malloc(10 * sizeof(int));
+	bzero(rft, n);
 	ft_bzero(str2, n);
 	return (0);
 }

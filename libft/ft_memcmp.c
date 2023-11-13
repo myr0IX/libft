@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:46:34 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/09 14:42:34 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:36:13 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int				*str1;
-	int				*str2;
+	unsigned char	*str1;
+	unsigned char	*str2;
 	unsigned int	i;
 
-	str1 = (int *) s1;
-	str2 = (int *) s2;
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
 	i = 0;
 	while (i < n)
 	{

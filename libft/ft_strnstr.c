@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:53:04 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/09 14:40:05 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:11:17 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	i;
 	unsigned int	start_find;
-	char			*src;
+	char			*find;
 
 	i = 0;
-	start_find = 0;
 	if (little[i] == '\0' || big[i] == '\0')
 		return ((void *) 0);
-	src = (char *) big;
-	while (i < len || src[i])
+	start_find = 0;
+	find = (char *) big;
+	while (i < len && find[i])
 	{
-		if (src[i + start_find] == little[start_find])
+		if (find[i + start_find] == little[start_find])
 		{
+			if (find[start_find] == '\0')
+				return (find + i);
 			start_find++;
-			if (start_find == '\0')
-				return (src + i);
+			i++;
 		}
 		else
 		{

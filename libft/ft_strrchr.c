@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:05:01 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/09 14:41:23 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:38:13 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
+	i++;
 	while (i-- > 0)
 	{
 		if (s[i] == c)

@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:27:16 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/09 14:35:45 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:57:45 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,39 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
-	int	*d;
-	int	*s;
-	int	nbr;
+	size_t	i;
+	char	*d;
+	char	*s;
 
-	nbr = n / 4;
-	if (n % 4 != 0)
-		nbr++;
 	i = 0;
-	d = (int *)dest;
-	s = (int *)src;
-	if (d < s)
+	d = (char *)dest;
+	s = (char *)src;
+	if (s > d)
 	{
-		i = n - 1;
-		while (i-- == 0)
+		while (i < n)
+		{
 			d[i] = s[i];
+			i++;
+		}
 	}
-	else
+	else if (s < d)
 	{
-		while (i++ < nbr)
-			d[i] = s[i];
+		while (n-- > 0)
+			d[n] = s[n];
 	}
 	return ((void *) d);
 }
+
+/*
+int	main(void)
+{
+	char *src = "this is a good nyancat !\r\n";
+	char dst1[20];
+    char dst2[20];
+	int size = strlen(src);
+
+    memmove(dst1, src, size);
+    ft_memmove(dst2, src, size);
+	return (0);
+}
+*/
