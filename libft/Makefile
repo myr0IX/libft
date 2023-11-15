@@ -8,18 +8,16 @@ NAME= libft.a
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
+	ar rcs -o $(NAME) $(SRC)
 
-$(OBJ) : $(HEADERS)
-
-%.o : %.c
+%.o : %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean : fclean
+fclean : clean
+	rm -f $(NAME)
+
+clean :
 	rm -f $(OBJ)
 	@echo "DELETE .o AND .a"
-
-fclean : 
-	rm -f $(NAME)
 
 re : fclean all

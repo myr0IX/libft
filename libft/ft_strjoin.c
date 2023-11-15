@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 15:08:43 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/14 12:25:44 by macassag         ###   ########.fr       */
+/*   Created: 2023/11/14 14:19:57 by macassag          #+#    #+#             */
+/*   Updated: 2023/11/14 14:47:34 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int		ft_strlen(char *str);
+void	*ft_calloc(size_t nmemb, size_t size);
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*cpy;
+	char			*nstr;
 	unsigned int	i;
+	unsigned int	j;
+	int				len;
 
 	i = 0;
-	cpy = (char *) malloc((ft_strlen((char *) s) + 1) * (sizeof(char)));
-	if (!cpy)
+	len = ft_strlen((char *) s1) + ft_strlen((char *) s2) + 1;
+	nstr = (char *) ft_calloc(len, sizeof(char));
+	if (!nstr)
 		return ((void *) 0);
-	while (s[i] && i < (unsigned int) ft_strlen((char *) s) + 1)
+	j = 0;
+	while (s1[j])
 	{
-		cpy[i] = s[i];
+		nstr[i] = s1[j];
 		i++;
+		j++;
 	}
-	if (s[i] == '\0')
-		cpy[i] = '\0';
-	return (cpy);
+	j = 0;
+	while (s2[j])
+	{
+		nstr[i] = s2[j];
+		i++;
+		j++;
+	}
+	return (nstr);
 }
