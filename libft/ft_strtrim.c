@@ -6,17 +6,47 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:57:41 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/15 13:42:02 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:18:24 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_strlen(char *str);
 
+static int	skip(const char s1, const char *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == s1)
+			return (1);
+		else
+			i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*nstr;
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && skip(s1[i], set) == 1)
+		s1++;
+	i += ft_strlen((char *)s1) -1;
+	while (s1[i] && skip(s1[i], set) == 1)
+		i--;
+	nstr = (char *) calloc(i + 1, sizeof(char));
+	if (!nstr)
+		return ((void *) 0);
+	ft_strlcpy(nstr, s1, i + 1);
+	return (nstr);
 }
 
 /*
