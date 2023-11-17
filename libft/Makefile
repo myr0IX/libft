@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS= -Wall -Wextra -Werror # Differents flags
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
@@ -18,6 +18,5 @@ fclean : clean
 
 clean :
 	rm -f $(OBJ)
-	@echo "DELETE .o AND .a"
 
 re : fclean all
