@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:53:04 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/14 11:55:33 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/18 11:28:31 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return ((void *) 0);
 }
+
+// int	main(int argc, char **argv)
+// {
+
+// }

@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:32:49 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/17 15:35:07 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/18 08:39:12 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putchar_fd('\n', fd);
 }
 
-int	main(int argc, char **argv)
-{
-	if (argc != 3)
-		return (0);
-	ft_putendl_fd(argv[1], atoi(argv[2]));
-	return (0);
-}
+// int	main(int argc, char **argv)
+// {
+// 	if (argc != 3)
+// 		return (0);
+// 	ft_putendl_fd(argv[1], atoi(argv[2]));
+// 	return (0);
+// }

@@ -7,16 +7,18 @@ NAME= libft.a
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	ar rcs -o $(NAME) $(SRC)
-
 %.o : %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-fclean : clean
-	rm -f $(NAME)
+$(NAME) : $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 clean :
 	rm -f $(OBJ)
 
+fclean : clean
+	rm -f $(NAME)
+
 re : fclean all
+
+.PHONY : re fclean clean all

@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:15:59 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/17 11:41:22 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/18 11:10:28 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,44 +53,54 @@
 // 	return (result);
 // }
 
-static int	count_len(int n)
+static int	count_len(unsigned int nbr, size_t count)
 {
-	size_t	count;
-
-	count = 0;
-	if (n < 0)
-		count++;
-	while (n != 0)
+	while (nbr != 0)
 	{
-		n = n / 10;
+		nbr = nbr / 10;
 		count++;
 	}
 	return (count);
 }
 
-char	*ft_itoa(int n)
+static char	*size_char(int n, unsigned int nbr, size_t count)
 {
-	size_t	count;
-	int		neg;
-	char	*result;
+	char			*result;
 
-	neg = 0;
-	count = count_len(n);
-	if (n < 0)
-	{
-		neg = -1;
-		n *= -1;
-	}
+	count = count_len(nbr, count);
 	result = (char *) ft_calloc(count + 1, sizeof(char));
 	if (!result)
 		return (NULL);
 	while (count > 0)
 	{
-		result[--count] = n % 10 + '0';
-		n = n / 10;
+		result[--count] = nbr % 10 + '0';
+		nbr = nbr / 10;
 	}
-	if (neg == -1)
+	if (n < 0)
 		result[0] = '-';
+	return (result);
+}
+
+char	*ft_itoa(int n)
+{
+	size_t			count;
+	unsigned int	nbr;
+	char			*result;
+
+	count = 0;
+	if (n == 0)
+	{
+		count++;
+		nbr = n;
+	}
+	else if (n < 0)
+	{
+		nbr = -n;
+		count++;
+	}
+	else
+		nbr = n;
+	result = size_char(n, nbr, count);
 	return (result);
 }
 // #include <stdio.h>
@@ -98,6 +108,7 @@ char	*ft_itoa(int n)
 // int	main(int argc, char **argv)
 // {
 // 	char	*str;
+// 	char	*t;
 
 // 	if (argc != 2)
 // 		return (0);

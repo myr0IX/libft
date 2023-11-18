@@ -6,32 +6,32 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:56:35 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/17 15:57:09 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/18 08:38:26 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-char	*ft_test(unsigned int i, char c)
-{
-	if (i == 0)
-		return (0);
+// char	*ft_test(unsigned int i, char c)
+// {
+// 	if (i == 0)
+// 		return (0);
 	
-}
+// }
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	char	*nstr;
-	size_t	i;
-	size_t	count;
+// char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+// {
+// 	char	*nstr;
+// 	size_t	i;
+// 	size_t	count;
 
-	i = 0;
-	count = 0;
-}
+// 	i = 0;
+// 	count = 0;
+// }
 
-int	main(void)
-{
-	char	*test;
+// int	main(void)
+// {
+// 	char	*test;
 
-	test = ft_strmapi(test, ft_atoi);
-}
+// 	test = ft_strmapi(test, ft_atoi);
+// }
