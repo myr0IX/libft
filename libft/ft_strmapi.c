@@ -10,28 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
-// char	*ft_test(unsigned int i, char c)
+// char	ft_test(unsigned int i, char c)
 // {
-// 	if (i == 0)
-// 		return (0);
-	
+// 	if (c >= 'a' && c <= 'z')
+// 		return (c + 1);
+// 	else
+// 		return (c);
 // }
 
-// char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-// {
-// 	char	*nstr;
-// 	size_t	i;
-// 	size_t	count;
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*nstr;
+	size_t	i;
 
-// 	i = 0;
-// 	count = 0;
-// }
+	i = 0;
+	nstr = (char *) ft_calloc(ft_strlen((char *) s) + 1, sizeof(char));
+	if (!nstr)
+		return (NULL);
+	while (s[i])
+	{
+		nstr[i] = (*f)(i, s[i]);
+		i++;
+	}
+	return (nstr);
+}
+
+// #include <stdio.h>
 
 // int	main(void)
 // {
 // 	char	*test;
 
-// 	test = ft_strmapi(test, ft_atoi);
+// 	test = "ab0cd";
+// 	test = ft_strmapi(test, &ft_test);
+// 	printf("%s", test);
+// 	return (0);
 // }
