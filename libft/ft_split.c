@@ -40,10 +40,12 @@ static size_t	count_array(const char *s, char c)
 	{
 		if (s[i] == c)
 			i = skip_c(s, c, i);
-		if ((s[i - 1] == c || s[0] != c) && s[i] != c)
+		if ((s[i - 1] == c || s[0]) && s[i])
+		{			
 			count++;
-		while (s[i] != c)
-			i++;
+			while (s[i] != c && s[i])
+				i++;
+		}
 	}
 	return (count);
 }
@@ -94,9 +96,9 @@ char	**ft_split(char const *s, char c)
 	while (i < count)
 	{
 		k = 0;
-		while (s[j] == c)
+		while (s[j] == c && s[j])
 			j++;
-		while (s[j] != c)
+		while (s[j] != c && s[j])
 			sstr[i][k++] = s[j++];
 		i++;
 	}
@@ -109,12 +111,12 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char	*s;
 // 	char	**result;
-// 	size_t	i;
+// 	int	i;
 
 // 	i = 0;
-// 	s = "      split       this for   me  !";
-// 	result = ft_split(s, ' ');
-// 	while (result[i])
+// 	s = "\0aa\0bbb";
+// 	result = ft_split(s, '\0');
+// 	while (i < 5)
 // 		printf("%s", result[i++]);
 // 	return (0);
 // }
