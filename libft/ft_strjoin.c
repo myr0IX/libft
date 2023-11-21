@@ -6,14 +6,11 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:19:57 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/14 14:47:34 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:55:34 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strlen(char *str);
-void	*ft_calloc(size_t nmemb, size_t size);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -6,13 +6,11 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:37:45 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/18 08:49:07 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:56:20 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar_fd(char c, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 10:48:06 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/18 10:03:53 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:58:48 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	count_array(const char *s, char c)
 		if (s[i] == c)
 			i = skip_c(s, c, i);
 		if ((s[i - 1] == c || s[0]) && s[i])
-		{			
+		{
 			count++;
 			while (s[i] != c && s[i])
 				i++;

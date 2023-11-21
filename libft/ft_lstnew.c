@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 11:53:04 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 10:38:53 by macassag         ###   ########.fr       */
+/*   Created: 2023/11/20 15:24:28 by macassag          #+#    #+#             */
+/*   Updated: 2023/11/20 15:36:19 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*head;
 
-	i = 0;
-	if (little[i] == '\0')
-		return ((char *) big);
-	if (big[i] == '\0')
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!head)
 		return ((void *) 0);
-	while (i < len && big[i])
-	{
-		if (ft_strncmp(big + i, little, ft_strlen((char *)little)) == 0
-			&& (i + (ft_strlen((char *)little)) <= len))
-			return ((char *)(big + i));
-		i++;
-	}
-	return ((void *) 0);
+	head->content = content;
+	head->next = NULL;
+	return (head);
 }
-
-// int	main(int argc, char **argv)
-// {
-
-// }

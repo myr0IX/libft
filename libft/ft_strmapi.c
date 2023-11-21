@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:56:35 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/18 08:38:26 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 11:35:24 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	nstr = (char *) ft_calloc(ft_strlen((char *) s) + 1, sizeof(char));
+	nstr = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!nstr)
 		return (NULL);
 	while (s[i])

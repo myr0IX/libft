@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:58:00 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/14 11:58:46 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:40:31 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int				result;
-	unsigned int	n;
-	unsigned int	i;
+	int		result;
+	size_t	n;
+	size_t	i;
 
 	i = 0;
 	n = 0;

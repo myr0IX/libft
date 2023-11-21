@@ -6,13 +6,11 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:17:39 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/17 15:36:18 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:56:27 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(char *str);
 
 void	ft_putstr_fd(char *s, int fd)
 {

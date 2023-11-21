@@ -6,52 +6,11 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:15:59 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/18 11:10:28 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:41:06 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// void	*ft_calloc(size_t nmemb, size_t size)
-// {
-// 	unsigned int	i;
-// 	char			*array;
-
-// 	array = (char *) malloc(nmemb * size);
-// 	if (!array)
-// 		return ((void *) 0);
-// 	i = 0;
-// 	while (i < (nmemb * size))
-// 		array[i++] = '\0';
-// 	return ((void *) array);
-// }
-
-// int	ft_atoi(const char *nptr)
-// {
-// 	int				result;
-// 	unsigned int	n;
-// 	unsigned int	i;
-
-// 	i = 0;
-// 	n = 0;
-// 	result = 0;
-// 	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
-// 		i++;
-// 	if (nptr[i] == '+' || nptr[i] == '-')
-// 	{
-// 		if (nptr[i] == '-')
-// 			n++;
-// 		i++;
-// 	}
-// 	while (nptr[i] >= '0' && nptr[i] <= '9')
-// 	{
-// 		result = (result * 10) + (nptr[i] - '0');
-// 		i++;
-// 	}
-// 	if (n % 2 != 0)
-// 		result *= -1;
-// 	return (result);
-// }
 
 static int	count_len(unsigned int nbr, size_t count)
 {

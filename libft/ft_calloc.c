@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:24:22 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/15 09:23:17 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 11:07:25 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned int	i;
-	char			*array;
+	size_t	i;
+	char	*array;
 
 	array = (char *) malloc(nmemb * size);
 	if (!array)

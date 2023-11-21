@@ -6,15 +6,11 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:57:41 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/16 10:46:19 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:56:52 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-void	*ft_calloc(size_t nmemb, size_t size);
-int		ft_strlen(char *str);
 
 static int	skip(const char s1, const char *set)
 {
