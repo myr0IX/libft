@@ -46,9 +46,7 @@ SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstmap_bonus.c
 
 OBJ = $(SRC:.c=.o)
-
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
-
 HEADERS = libft.h
 NAME = libft.a
 
@@ -57,10 +55,11 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus : $(NAME)
-
 %.o : %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus : $(OBJ_BONUS)
+	$(MAKE) $(NAME) SRC="$(SRC) $(SRC_BONUS)" 
 
 clean :
 	rm -f $(OBJ)
