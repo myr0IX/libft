@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hznty <hznty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:24:22 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 11:07:25 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:43:02 by hznty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	i;
 	char	*array;
 
+	if (nmemb != 0 && size > SIZE_MAX / size)
+		return (NULL);
 	array = (char *) malloc(nmemb * size);
 	if (!array)
 		return ((void *) 0);

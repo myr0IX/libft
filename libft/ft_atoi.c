@@ -3,30 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hznty <hznty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:58:00 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 10:40:31 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:34:06 by hznty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+static int	skip_white_space(const char *nptr)
 {
-	int		result;
-	size_t	n;
 	size_t	i;
 
 	i = 0;
-	n = 0;
-	result = 0;
 	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
 		i++;
+	return (i);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	size_t	result;
+	size_t	i;
+	size_t	overflow;
+	int		neg;
+
+	result = 0;
+	neg = 1;
+	overflow = 9223372036854775807;
+	i = skip_white_space(nptr);
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		if (nptr[i] == '-')
-			n++;
+		neg = -1;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
@@ -34,25 +43,25 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
-	if (n % 2 != 0)
-		result *= -1;
-	return (result);
+	if (result > 9223372036854775807)
+		return (-1);
+	if (result < 9223372036854775808 && neg == -1)
+		return (0);
+	return ((int)result * neg);
 }
 
-/*
-#include <stdio.h>
-int	main(int argc, char **argv)
-{
-	int rft;
-	int	mft;
+// #include <stdio.h>
+// int	main(int argc, char **argv)
+// {
+// 	int rft;
+// 	int	mft;
 
-	if (argc == 3)
-	{
-		rft = atoi(argv[1]);
-		mft = ft_atoi(argv[2]);
-		printf("rft : %d\n", rft); 
-		printf("mft : %d", mft);
-	}
-	return (0);
-}
-*/
+// 	if (argc == 2)
+// 	{
+// 		rft = atoi(argv[1]);
+// 		mft = ft_atoi(argv[1]);
+// 		printf("rft : %d\n", rft); 
+// 		printf("mft : %d\n", mft);
+// 	}
+// 	return (0);
+// }
