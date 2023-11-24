@@ -6,7 +6,7 @@
 /*   By: hznty <hznty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:58:00 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/23 21:34:06 by hznty            ###   ########.fr       */
+/*   Updated: 2023/11/24 16:19:38 by hznty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	ft_atoi(const char *nptr)
 	i = skip_white_space(nptr);
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		neg = -1;
+		if (nptr[i] == '-')
+			neg = -1;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
@@ -43,9 +44,9 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
-	if (result > 9223372036854775807)
+	if (result == overflow && neg == 1)
 		return (-1);
-	if (result < 9223372036854775808 && neg == -1)
+	if (result == overflow + 1 && neg == -1)
 		return (0);
 	return ((int)result * neg);
 }
