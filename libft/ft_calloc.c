@@ -6,7 +6,7 @@
 /*   By: hznty <hznty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:24:22 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/23 19:43:02 by hznty            ###   ########.fr       */
+/*   Updated: 2023/11/24 22:23:25 by hznty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 }
 
 /*
-#include "ft_memset.c"
 #include <stdio.h>
-
-void	*ft_memset(void *s, int c, size_t n);
 
 int	main(void)
 {
@@ -59,7 +56,7 @@ int	main(void)
 	str2 = ft_memset(str2, 'd', nmemb);
 	i = 0;
 	while (str2[i])
-		printf("my ft : %d", str2[i++]);
+		printf("my ft : %d\n", str2[i++]);
 	return (0);
 }
 */
