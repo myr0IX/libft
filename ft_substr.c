@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:28:26 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 11:15:56 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:20:13 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (start >= (unsigned int) ft_strlen(s))
-	{
-		new_str = ft_calloc(1, sizeof(char));
-		if (!new_str)
-			return (NULL);
-		return (new_str);
-	}
+		return (ft_calloc(1, 1));
 	len_str = (size_t) ft_strlen(s + start);
 	if (len_str > len)
 		len_str = len_str - (len_str - len);
@@ -39,9 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (new_str);
 }
-
-// int	main(void)
-// {
-// 	ft_substr("", 0, 0);
-// 	return (0);
-// }

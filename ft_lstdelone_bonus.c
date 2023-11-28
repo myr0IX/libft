@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:41:55 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/22 14:34:13 by macassag         ###   ########.fr       */
+/*   Created: 2023/11/22 09:42:07 by macassag          #+#    #+#             */
+/*   Updated: 2023/11/28 09:23:42 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	if (lst == NULL || del == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
+	lst = NULL;
 }
-
-// int	main(void)
-// {
-// 	t_list *l = ((void*)0);
-// 	t_list *expected;
-// 	t_list *actual;
-// 	return (0);
-// }

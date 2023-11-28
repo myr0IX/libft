@@ -6,25 +6,19 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:56:35 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 11:35:24 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:16:14 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// char	ft_test(unsigned int i, char c)
-// {
-// 	if (c >= 'a' && c <= 'z')
-// 		return (c + 1);
-// 	else
-// 		return (c);
-// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*nstr;
 	size_t	i;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	nstr = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!nstr)
@@ -36,15 +30,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (nstr);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	*test;
-
-// 	test = "ab0cd";
-// 	test = ft_strmapi(test, &ft_test);
-// 	printf("%s", test);
-// 	return (0);
-// }

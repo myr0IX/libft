@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:27:16 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/13 13:57:45 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:17:56 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return ((void *) d);
 }
-
-/*
-int	main(void)
-{
-	char *src = "this is a good nyancat !\r\n";
-	char dst1[20];
-    char dst2[20];
-	int size = strlen(src);
-
-    memmove(dst1, src, size);
-    ft_memmove(dst2, src, size);
-	return (0);
-}
-*/

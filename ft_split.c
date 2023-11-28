@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 10:48:06 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 10:58:48 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:20:53 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	free_tab(char **sstr)
 	while (sstr[j])
 		free(sstr[j++]);
 	free(sstr);
+	sstr = NULL;
 }
 
 static size_t	skip_c(const char *s, char c, size_t j)
@@ -87,6 +88,8 @@ char	**ft_split(char const *s, char c)
 	size_t	k;
 	size_t	count;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
 	count = count_array(s, c);
@@ -104,19 +107,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (sstr);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	*s;
-// 	char	**result;
-// 	int	i;
-
-// 	i = 0;
-// 	s = "\0aa\0bbb";
-// 	result = ft_split(s, '\0');
-// 	while (i < 5)
-// 		printf("%s", result[i++]);
-// 	return (0);
-// }

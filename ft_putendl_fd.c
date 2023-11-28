@@ -1,43 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 09:59:44 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/13 13:23:35 by macassag         ###   ########.fr       */
+/*   Created: 2023/11/17 15:32:49 by macassag          #+#    #+#             */
+/*   Updated: 2023/11/25 14:18:07 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	char	*d;
-
-	d = (char *) s;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = c;
-		i++;
-	}
-	return ((void *) d);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-/*
-int	main(int argc, char **argv)
-{
-	int	*t;
-	size_t n;
-
-	if (argc == 2)
-	{
-		n = argv[1];
-		t = (int *) malloc(10 * sizeof(int));
-		t = (int *)ft_memset (t, 'd', n);
-	}
-	return (0);
-}
-*/

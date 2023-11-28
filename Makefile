@@ -62,7 +62,7 @@ bonus : $(OBJ_BONUS)
 	$(MAKE) $(NAME) SRC="$(SRC) $(SRC_BONUS)" 
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean : clean
 	rm -f $(NAME)

@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 11:22:14 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 11:40:33 by macassag         ###   ########.fr       */
+/*   Created: 2023/11/17 15:37:45 by macassag          #+#    #+#             */
+/*   Updated: 2023/11/25 14:18:10 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	unsigned int	nbr;
 
-	i = 0;
-	while (s[i])
+	if (n < 0)
 	{
-		(*f)((unsigned int)i, &s[i]);
-		i++;
+		nbr = -n;
+		ft_putchar_fd('-', fd);
 	}
+	else
+		nbr = n;
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putchar_fd(nbr % 10 + '0', fd);
+	}
+	if (nbr < 10)
+		ft_putchar_fd(nbr + '0', fd);
 }
-
-// int	main(void)
-// {
-// 	char b[] = "override this !";
-//  	char b2[0xF0];
-//  	size_t size = strlen(b);
-
-//  	for (size_t i = 0; i < size; i++)
-// 		ft_striteri(i, b2 + i);
-//  	b2[size] = 0;
-//  	ft_striteri(b, ft_striteri);
-// 	return (0);
-// }

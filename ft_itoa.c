@@ -6,7 +6,7 @@
 /*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:15:59 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/20 10:41:06 by macassag         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:05:47 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,3 @@ char	*ft_itoa(int n)
 	result = size_char(n, nbr, count);
 	return (result);
 }
-// #include <stdio.h>
-
-// int	main(int argc, char **argv)
-// {
-// 	char	*str;
-// 	char	*t;
-
-// 	if (argc != 2)
-// 		return (0);
-// 	str = ft_itoa(ft_atoi((const char *)argv[1]));
-// 	printf("%s", str);
-// }

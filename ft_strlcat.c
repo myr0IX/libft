@@ -3,38 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hznty <hznty@student.42.fr>                +#+  +:+       +#+        */
+/*   By: macassag <macassag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:23:41 by macassag          #+#    #+#             */
-/*   Updated: 2023/11/24 21:52:49 by hznty            ###   ########.fr       */
+/*   Updated: 2023/11/25 10:40:43 by macassag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	j;
 	size_t	i;
 	size_t	len;
 
-	j = 0;
+	if (dst == NULL && size == 0)
+		return (0);
+	len = ft_strlen(dst);
+	if (size <= len)
+		return (ft_strlen(src) + size);
 	i = 0;
-	len = 0;
-	while (dest[i] && i < size)
-		i++;
-	len = ft_strlen(src);
-	if (size == 0 || i == size)
-		return (i + len);
-	while (i < size - 1 && src[j])
+	while (len + i < size - 1 && src[i])
 	{
-		dest[i] = src[j];
-		j++;
+		dst[len + i] = src[i];
 		i++;
 	}
-	if (j < len)
-		i += len - j;
-	dest[i] = '\0';
-	return (i);
+	dst[len + i] = '\0';
+	return (len + ft_strlen(src));
 }
-// tester avec python tutor
